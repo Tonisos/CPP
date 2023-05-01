@@ -1,4 +1,5 @@
-#pragma once
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <iostream>
 using std::string;
@@ -8,12 +9,17 @@ using std::endl;
 class Weapon
 {
 	public :
-		string&	getType() const;
-		void	setType(string newType);
+		Weapon ();
+		~Weapon();
+
+		const std::string&	getType() ;
+		void				setType(string newType);
 
 
 	private :
-		string type;
+		string _type;
 
 
 };
+
+#endif
