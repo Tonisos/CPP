@@ -1,8 +1,14 @@
 #include "Weapon.hpp"
 
-Weapon::Weapon(){};
+Weapon::Weapon(string type): _type(type)
+{
 
-Weapon::~Weapon(){};
+}
+
+Weapon::~Weapon()
+{
+
+}
 
 
 

@@ -1,4 +1,4 @@
-NAME = Weapon
+NAME = Harl
 
 # Colors
 GREEN = \033[1;32m
@@ -9,9 +9,7 @@ NC = \033[0m
 
 # Headers
 HEADER_DIR = ./
-HEADER_NAMES = Weapon.hpp \
-				HumanA.hpp \
-				HumanB.hpp
+HEADER_NAMES = Harl.hpp
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
 
 # Compiler and flags
@@ -23,9 +21,7 @@ MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
 SRCS = main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp
+		Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # .cpp .o rule

@@ -6,13 +6,14 @@ using std::string;
 using std::cout;
 using std::endl;
 
+
 class Weapon
 {
 	public :
-		Weapon ();
+		Weapon (string type);
 		~Weapon();
 
-		const std::string&	getType() ;
+		const std::string&	getType(void) ;
 		void				setType(string newType);
 
 
