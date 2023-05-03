@@ -25,13 +25,21 @@ string put_in_string(ifstream* fluxIn)
 
 string replaceString(string text, string s1, string s2)
 {
-	while (text.find(s1, 0) != std::string::npos)
+	int i = 0;
+	int	j;
+	if (s1.empty())
+		return text;
+	
+	while (text.find(s1, i) != std::string::npos)
 	{
-		text = text.substr(0, text.find(s1, 0)) + s2 + text.substr(text.find(s1, 0) + s1.size());
+		j = i;
+		i += text.find(s1, i) - i + s2.size();
+		cout << "i : " << i << endl;
+		text = text.substr(0, text.find(s1, j)) + s2 + text.substr(text.find(s1, j) + s1.size());
+		cout << text << endl;
 	}
 	cout << text << endl;
 	return text;
-
 }
 
 

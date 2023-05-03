@@ -17,7 +17,6 @@ string truncated(string str)
 			str.insert(0, " ");
 	}
 	return(str);
-	
 }
 
 void	Contact::init_last_name(string str)
@@ -52,8 +51,6 @@ void	Contact::print()
 	cout << "|" << truncated(m_first_name);
 	cout << "|" << truncated(m_last_name) ;
 	cout << "|" << truncated(m_nickname) << "|" ;
-	// cout << truncated(m_phone) << endl;
-	// cout << truncated(m_secret) << endl;
 }
 
 void	Contact::print_private()

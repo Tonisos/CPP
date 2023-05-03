@@ -6,9 +6,10 @@ int main()
 {
 	Harl harl;
 
-	harl.complain("warning");
-	harl.complain("error");
-	harl.complain("indo");
-	harl.complain("debug");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("INFO");
+	harl.complain("DEBUG");
+	harl.complain("");
 	return 0;
 }

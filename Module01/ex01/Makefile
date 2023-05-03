@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = MoarBrainz
 
 # Colors
 GREEN = \033[1;32m
@@ -7,37 +7,43 @@ CYAN = \033[1;36m
 YELLOW = \033[1;33m
 NC = \033[0m
 
-
 # Headers
-HEADER = ./
+HEADER_DIR = ./
+HEADER_NAMES = Zombie.hpp
+HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
 
 # Compiler and flags
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -I$(HEADER) -std=c++98 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -std=c++98 #-fsanitize=address
+RM = rm
+RM_FLAGS = -rf
+MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
-SRCS = Contact.cpp main.cpp PhoneBook.cpp
+SRCS = main.cpp \
+		Zombie.cpp \
+		zombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # .cpp .o rule
-%.o: %.cpp Makefile
+%.o: %.cpp Makefile $(HEADERS)
 	@printf "${YELLOW}-> Compiling: ${CYAN}$<${YELLOW}...${NC}"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "${GREEN} OK!${NC}\n"
 
 all:
-	@make $(NAME)
+	@make $(NAME) $(MAKE_FLAGS)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@printf "${GREEN}-> $(NAME) executable compiled successfully${NC}\n"
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(RM_FLAGS) $(OBJS)
 	@printf "${PURPLE}-> All $(NAME) objs files removed successfully${NC}\n"
 
 fclean :
-	@$(RM) $(NAME) $(OBJS)
+	@$(RM) $(RM_FLAGS) $(NAME) $(OBJS)
 	@printf "${PURPLE}-> $(NAME) executable and $(NAME) objs files removed successfully${NC}\n"
 
 re: fclean all

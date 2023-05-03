@@ -1,4 +1,4 @@
-NAME = ZOMBIELAND
+NAME = Fixed
 
 # Colors
 GREEN = \033[1;32m
@@ -9,7 +9,7 @@ NC = \033[0m
 
 # Headers
 HEADER_DIR = ./
-HEADER_NAMES = Zombie.hpp
+HEADER_NAMES = Fixed.hpp
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
 
 # Compiler and flags
@@ -21,9 +21,8 @@ MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
 SRCS = main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		Fixed.cpp \
+
 OBJS = $(SRCS:.cpp=.o)
 
 # .cpp .o rule

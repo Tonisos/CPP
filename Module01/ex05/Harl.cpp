@@ -26,7 +26,14 @@ void	Harl::error(void)
 void	Harl::complain(string level)
 {
 	string Levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	string Harl::*instructions[4] = {&Harl::debug, &Harl::info, }
-	this->*c_str(level)();
+	void (Harl::*instructions[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	for(int i = 0; i < 4; i++)
+	{
+		if (level == Levels[i])
+		{
+			(this->*instructions[i])();
+			return ;
+		}
 
+	}
 }
