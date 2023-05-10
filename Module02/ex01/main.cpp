@@ -2,6 +2,9 @@
 
 int main( void ) {
 	Fixed a;
+	// cout << a.toInt() << endl;
+	// cout << a.getRawBits() << endl;
+	// cout << a.toFloat() << endl;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );

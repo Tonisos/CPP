@@ -14,6 +14,8 @@ class Fixed
 	public :
 		Fixed();
 		~Fixed();
+		Fixed(Fixed const& toCopy);
+		Fixed& operator=(Fixed const& toCopy);
 		Fixed(const int num);
 		Fixed(const float num);
 
@@ -23,4 +25,4 @@ class Fixed
 		int 	toInt( void ) const;
 };
 
-std::ostream& operator<<(std::ostream &os, Fixed &fixed);
+std::ostream& operator<<(std::ostream &out, Fixed const &fixed);
