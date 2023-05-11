@@ -19,7 +19,7 @@ Fixed::Fixed(Fixed const& toCopy)
 	*this = toCopy;
 }
 
-Fixed& Fixed::operator=(Fixed const& toCopy)
+Fixed &Fixed::operator=(Fixed const& toCopy)
 {
 	// cout << "Copy assignment operator called" << endl;
 	if (this != &toCopy)
@@ -70,25 +70,25 @@ std::ostream& operator<<(std::ostream &out, Fixed const &fixed)
 
 // ARITHMETIC OPERATORS .............................................................................
 
-Fixed Fixed::operator+(Fixed &other)
+Fixed Fixed::operator+(Fixed const &other) const
 {
 	float result = toFloat() + other.toFloat();
 	return (Fixed(result));
 }
 
-Fixed Fixed::operator-(Fixed &other)
+Fixed Fixed::operator-(Fixed const &other) const
 {
 	float result = toFloat() - other.toFloat();
 	return (Fixed(result));
 }
 
-Fixed Fixed::operator*(Fixed &other)
+Fixed Fixed::operator*(Fixed const &other) const 
 {
 	float result = toFloat() * other.toFloat();
 	return (Fixed(result));
 }
 
-Fixed Fixed::operator/(Fixed &other)
+Fixed Fixed::operator/(Fixed const &other) const
 {
 	float result = toFloat() / other.toFloat();
 	return (Fixed(result));
@@ -124,31 +124,31 @@ Fixed Fixed::operator++(int)
 
 // COMPARISON OPERATORS..............................................................................
 
-Fixed Fixed::operator<(Fixed &other)
+Fixed Fixed::operator<(Fixed const &other) const
 {
 	return (this->_value < other._value);
 }
 
-Fixed Fixed::operator<=(Fixed &other)
+Fixed Fixed::operator<=(Fixed const &other) const
 {
 	return (this->_value <= other._value);
 }
 
-Fixed Fixed::operator==(Fixed &other)
+Fixed Fixed::operator==(Fixed const &other) const 
 {
 	return (this->_value == other._value);
 }
 
-Fixed Fixed::operator>(Fixed &other)
+Fixed Fixed::operator>(Fixed const &other) const
 {
 	return (this->_value > other._value);
 }
 
-Fixed Fixed::operator>=(Fixed &other)
+Fixed Fixed::operator>=(Fixed const &other) const
 {
 	return (this->_value >= other._value);
 }
-Fixed Fixed::operator!=(Fixed &other)
+Fixed Fixed::operator!=(Fixed const &other) const
 {
 	return (this->_value != other._value);
 }

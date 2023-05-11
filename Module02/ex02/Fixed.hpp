@@ -15,7 +15,7 @@ class Fixed
 		Fixed();
 		~Fixed();
 		Fixed(Fixed const& toCopy);
-		Fixed& operator=(Fixed const& toCopy);
+		Fixed &operator=(Fixed const& toCopy);
 		Fixed(const int num);
 		Fixed(const float num);
 
@@ -24,22 +24,22 @@ class Fixed
 		float 	toFloat( void ) const;
 		int 	toInt( void ) const;
 
-		Fixed operator+(Fixed &other);
-		Fixed operator-(Fixed &other);
-		Fixed operator*(Fixed &other);
-		Fixed operator/(Fixed &other);
+		Fixed operator+(Fixed const &other) const;
+		Fixed operator-(Fixed const &other) const;
+		Fixed operator*(Fixed const &other) const;
+		Fixed operator/(Fixed const &other) const;
 
 		Fixed& operator--(void);
 		Fixed operator--(int);
 		Fixed &operator++(void);
 		Fixed operator++(int);
 
-		Fixed operator<(Fixed &other);
-		Fixed operator<=(Fixed &other);
-		Fixed operator>(Fixed &other);
-		Fixed operator>=(Fixed &other);
-		Fixed operator==(Fixed &other);
-		Fixed operator!=(Fixed &other);
+		Fixed operator<(Fixed const &other) const;
+		Fixed operator<=(Fixed const &other) const;
+		Fixed operator>(Fixed const &other) const;
+		Fixed operator>=(Fixed const &other) const;
+		Fixed operator==(Fixed const &other) const;
+		Fixed operator!=(Fixed const &other) const;
 
 		static Fixed min(Fixed &f1,  Fixed &f2);
 		static Fixed max(Fixed &f1,  Fixed &f2);
