@@ -1,8 +1,8 @@
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap Tonio("tonio");
+	FragTrap  Tonio("tonio");
 	
 
 	Tonio.attack("Henry");
@@ -14,6 +14,9 @@ int main()
 	Tonio.attack("Manu");
 	Tonio.takeDamage(5);
 	Tonio.beRepaired(5);
+	Tonio.highFivesGuys();
+
+	FragTrap Tonio2 = Tonio;
 	
 	return 0;
 }
