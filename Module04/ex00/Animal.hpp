@@ -10,10 +10,18 @@ using std::endl;
 class Animal
 {
 	public :
+		Animal();
+		Animal(string type);
+		~Animal();
+		Animal(Animal const& toCopy);
+		Animal &operator=(Animal const& toCopy);
+
+		string getType(void) const;
+
 
 
 	protected :
-		string	type
+		string	_type;
 
 
 
