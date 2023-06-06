@@ -33,3 +33,8 @@ string Animal::getType(void) const
 {
 	return (_type);
 }
+
+void Animal::makeSound(void) const
+{
+	cout << "This is an animal noise" << endl;
+}

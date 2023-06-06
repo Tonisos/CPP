@@ -16,13 +16,12 @@ class Animal
 		Animal(Animal const& toCopy);
 		Animal &operator=(Animal const& toCopy);
 
-		string getType(void) const;
-
-
+		string	getType(void) const;
+		void	makeSound(void) const;
 
 	protected :
 		string	_type;
-
+		
 
 
 };
