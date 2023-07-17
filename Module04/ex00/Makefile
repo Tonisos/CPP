@@ -14,7 +14,7 @@ HEADER_NAMES = Animal.hpp \
 				Dog.hpp \
 				WrongAnimal.hpp \
 				WrongCat.hpp \
-				colors.h
+				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
 
 # Compiler and flags
