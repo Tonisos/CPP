@@ -12,12 +12,12 @@ class Animal
 	public :
 		Animal();
 		Animal(string type);
-		~Animal();
+		virtual ~Animal();
 		Animal(Animal const& toCopy);
 		Animal &operator=(Animal const& toCopy);
 
 		string	getType(void) const;
-		void	makeSound(void) const;
+		virtual void	makeSound() const;
 
 	protected :
 		string	_type;

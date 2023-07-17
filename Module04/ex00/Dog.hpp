@@ -7,10 +7,10 @@ class Dog : public Animal
 		~Dog();
 		Dog(Dog const& toCopy);
 		Dog &operator=(Dog const& toCopy);
+		void makeSound() const;
 
 
 
 	private :
 
-		void makeSound(void) const;
 };

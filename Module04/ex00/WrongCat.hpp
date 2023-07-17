@@ -7,11 +7,8 @@ class WrongCat : public WrongAnimal
 		~WrongCat();
 		WrongCat(WrongCat const& toCopy);
 		WrongCat &operator=(WrongCat const& toCopy);
-
-
+		void makeSound(void) const;
 
 	private :
-
-		void makeSound(void) const;
 
 };

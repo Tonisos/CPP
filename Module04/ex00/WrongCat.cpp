@@ -5,6 +5,11 @@ WrongCat::WrongCat():WrongAnimal("WrongCat")
 
 }
 
+WrongCat::~WrongCat()
+{
+	
+}
+
 
 
 WrongCat::WrongCat(WrongCat const& toCopy)
@@ -23,5 +28,5 @@ WrongCat& WrongCat::operator=(WrongCat const& toCopy)
 
 void WrongCat::makeSound(void) const
 {
-	cout << "miew miew" << endl;
+	cout << "Wrong miew miew" << endl;
 }

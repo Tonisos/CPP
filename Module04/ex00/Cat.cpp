@@ -5,6 +5,11 @@ Cat::Cat():Animal("Cat")
 
 }
 
+Cat::~Cat()
+{
+	
+}
+
 Cat::Cat(Cat const& toCopy)
 {
 	*this = toCopy;
