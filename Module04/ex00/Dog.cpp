@@ -4,6 +4,10 @@ Dog::Dog():Animal("Dog")
 {
 
 }
+Dog::~Dog()
+{
+	
+}
 
 
 Dog::Dog(Dog const& toCopy)
