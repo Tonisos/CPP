@@ -7,10 +7,9 @@ class Dog : public Animal
 		~Dog();
 		Dog(Dog const& toCopy);
 		Dog &operator=(Dog const& toCopy);
-		void makeSound() const;
-
-
+		void makeSound(void) const;
 
 	private :
+		Brain* BrainDog;
 
 };

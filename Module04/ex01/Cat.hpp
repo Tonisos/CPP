@@ -10,6 +10,6 @@ class Cat : public Animal
 		void makeSound(void) const;
 
 	private :
-
+		Brain* Braincat;
 
 };

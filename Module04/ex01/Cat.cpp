@@ -1,19 +1,26 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat():Animal("Cat")
 {
-
+	Braincat = new Brain();
+	if (Braincat == NULL)
+		cout << "a cat is born without a brain" << endl;
 }
 
 Cat::~Cat()
 {
-	
+	cout << "cat destroyed" << endl;
+	delete Braincat;
 }
 
 Cat::Cat(Cat const& toCopy)
 {
-	*this = toCopy;
+	Braincat = new Brain(*toCopy.Braincat); 
+	if (Braincat == NULL)
+		cout << "a cat is born without a brain" << endl; 
 	cout << "Cat copied" << endl;
+	*this = toCopy;
 }
 
 Cat& Cat::operator=(Cat const& toCopy)
@@ -21,6 +28,10 @@ Cat& Cat::operator=(Cat const& toCopy)
 	if (this == &toCopy)
 		return (*this);
 	_type = toCopy._type;
+
+	Braincat = new Brain(*toCopy.Braincat); 
+	if (Braincat == NULL)
+		cout << "a cat is born without a brain" << endl; 
 	return (*this);
 }
 

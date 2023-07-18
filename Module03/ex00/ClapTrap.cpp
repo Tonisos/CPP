@@ -46,7 +46,6 @@ void	ClapTrap::attack(const string& target)
 		cout << Name << " is dead and thus cannot attack" << endl;
 	else 
 		cout << Name << " has no Energy left and thus cannot attack" << endl;
-
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Brain.hpp"
 
 using std::string;
 using std::cout;

@@ -1,7 +1,8 @@
 #pragma once 
 
-#include <iostream>
 #include "Animal.hpp"
+
+using std::string;
 
 class Brain {
 
@@ -14,9 +15,5 @@ class Brain {
 
 	private :
 
-		string ideas[]	
-
-
-
-
+		string ideas[100];	
 };
