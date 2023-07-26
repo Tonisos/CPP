@@ -3,13 +3,14 @@
 ClapTrap::ClapTrap() :Hit_points(10), Energy(10), Attack(0)
 {
 	Name = "DEFAULT";
+	cout << "Claptrap created" << endl;
 }
 
 
 
 ClapTrap::ClapTrap(string name) : Name(name), Hit_points(10), Energy(10), Attack(0) 
 {
-
+	cout << "Claptrap created" << endl;
 }
 
 ClapTrap::~ClapTrap()

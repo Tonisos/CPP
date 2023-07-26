@@ -2,12 +2,14 @@
 
 Cat::Cat():Animal("Cat")
 {
+	cout << "Cat created" << endl;
 
 }
 
 Cat::~Cat()
 {
-	
+	cout << "Cat destroyed" << endl;
+
 }
 
 Cat::Cat(Cat const& toCopy)

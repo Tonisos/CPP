@@ -16,7 +16,7 @@ int main()
 	Tonio.beRepaired(5);
 	Tonio.highFivesGuys();
 
-	FragTrap Tonio2 = Tonio;
+
 	
 	return 0;
 }

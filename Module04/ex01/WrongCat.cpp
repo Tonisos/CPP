@@ -2,12 +2,12 @@
 
 WrongCat::WrongCat():WrongAnimal("WrongCat")
 {
-
+	cout << "WrongCat created" << endl;
 }
 
 WrongCat::~WrongCat()
 {
-	
+	cout << "WrongCat created" << endl;
 }
 
 

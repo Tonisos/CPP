@@ -4,6 +4,9 @@ int main()
 {
 	ScavTrap Tonio("tonio");
 	
+	ClapTrap Toni;
+
+	Toni.attack("Manu");
 
 	Tonio.attack("Henry");
 	Tonio.takeDamage(4);

@@ -5,7 +5,7 @@ FragTrap::FragTrap()
 	Hit_points = 100;
 	Energy = 100;
 	Attack = 30;
-
+	cout << "Fragtrap created" << endl;
 }
 
 FragTrap::FragTrap(string name) : ClapTrap(name)
@@ -13,6 +13,8 @@ FragTrap::FragTrap(string name) : ClapTrap(name)
 	Hit_points = 100;
 	Energy = 100;
 	Attack = 30;
+		cout << "Fragtrap created" << endl;
+
 }
 
 

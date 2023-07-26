@@ -8,24 +8,26 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
+	Animal* tab[100];
+	for(int i = 0; i < 100; i++)
+	{
+		if (i % 2 == 0)
+			tab[i] = new Dog;
+		else
+			tab[i] = new Cat;
+	}
 
-	std::cout <<std::endl << std::endl;
+	cout << endl;
 
-	WrongAnimal toto;
-	WrongCat minou;
-	toto.makeSound();
-	minou.makeSound();
+	tab[2]->makeSound();
+	tab[3]->makeSound();
+
+
+	cout << endl;
+	
+	for(int i = 0; i < 100; i++)
+		delete tab[i];
+
 
 	return 0;
 }

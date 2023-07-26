@@ -2,11 +2,12 @@
 
 Dog::Dog():Animal("Dog")
 {
-
+	cout << "Dog created" << endl;
 }
 Dog::~Dog()
 {
-	
+	cout << "Dog destoyed" << endl;
+
 }
 
 

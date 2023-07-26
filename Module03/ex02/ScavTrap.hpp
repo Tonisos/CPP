@@ -9,5 +9,7 @@ class ScavTrap : public ClapTrap
 			ScavTrap(ScavTrap &src);
 			ScavTrap	&operator=(ScavTrap const &src);
 			void		guardGate();
+			void		attack(const string& target);
+
 
 };

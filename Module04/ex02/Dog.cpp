@@ -3,7 +3,8 @@
 
 Dog::Dog():Animal("Dog")
 {
-	cout << "dog created" << endl;
+	cout << "Cat created"<< endl;
+
 	BrainDog = new Brain();
 	if (BrainDog == NULL)
 		cout << "a Dog is born without a brain" << endl;

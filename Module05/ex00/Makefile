@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = Bureaucrat
 
 # Colors
 GREEN = \033[1;32m
@@ -9,30 +9,22 @@ NC = \033[0m
 
 # Headers
 HEADER_DIR = ./
-HEADER_NAMES = Animal.hpp \
-				Cat.hpp \
-				Dog.hpp \
-				WrongAnimal.hpp \
-				WrongCat.hpp \
-				Brain.hpp \
+HEADER_NAMES = Bureaucrat.hpp \
+
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
 
 # Compiler and flags
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -std=c++98 #-fsanitize=address
 RM = rm
 RM_FLAGS = -rf
 MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
 SRCS = main.cpp \
-		Animal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
-		Brain.cpp 
+		Bureaucrat.cpp \
+		
 
 OBJS = $(SRCS:.cpp=.o)
 

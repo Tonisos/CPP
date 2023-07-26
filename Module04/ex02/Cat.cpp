@@ -3,7 +3,7 @@
 
 Cat::Cat():Animal("Cat")
 {
-	cout << "Cat created" << endl;
+	cout << "Cat created"<< endl;
 	Braincat = new Brain;
 	if (Braincat == NULL)
 		cout << "a cat is born without a brain" << endl;

@@ -15,7 +15,7 @@ class ClapTrap
 					~ClapTrap();
 					ClapTrap(ClapTrap &toCopy);
 		ClapTrap	&operator=(ClapTrap const &src);
-		void		attack(const string& target);
+		virtual void		attack(const string& target);
 		void		takeDamage(unsigned int amount);
 		void 		beRepaired(unsigned int amount);
 
