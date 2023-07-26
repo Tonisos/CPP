@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(string const name, int grade) : _name(name), _grade(grade
 
 Bureaucrat::~Bureaucrat()
 {
-	
+
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& toCopy)
@@ -45,4 +45,9 @@ string Bureaucrat::getName(void)
 int Bureaucrat::getGrade(void)
 {
 	return(_grade);
+}
+
+void Bureaucrat::increaseGrade()
+{
+	
 }
