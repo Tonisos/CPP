@@ -1,4 +1,4 @@
-#pragna once
+#pragma once
 
 #include <iostream>
 #include <stdexcept>
@@ -24,14 +24,17 @@ class Bureaucrat{
 		Bureaucrat &operator=(Bureaucrat const& toCopy);
 
 
-		void getName();
-		void getGrade();
+		string getName();
+		int getGrade();
 		void increaseGrade();
 		void decreaseGrade();
 
-		class GradeTooHightException : public exception{
-			
-		}
+};
 
+class GradeTooHighException : public exception{
+				const char* what() const throw();
+};
 
+class GradeTooLowException : public exception{
+				const char* what() const throw();
 };
