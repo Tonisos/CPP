@@ -17,7 +17,7 @@ class Animal
 		Animal &operator=(Animal const& toCopy);
 
 		string	getType(void) const;
-		virtual void	makeSound() const;
+		void	makeSound() const;
 
 	protected :
 		string	_type;

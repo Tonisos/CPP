@@ -7,7 +7,7 @@ WrongCat::WrongCat():WrongAnimal("WrongCat")
 
 WrongCat::~WrongCat()
 {
-	cout << "WrongCat created" << endl;
+	cout << "WrongCat destroyed" << endl;
 }
 
 

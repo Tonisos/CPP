@@ -32,10 +32,10 @@ int main()
 
 	std::cout <<std::endl;
 
-	WrongAnimal toto;
-	WrongCat minou;
-	toto.makeSound();
-	minou.makeSound();
+	WrongAnimal *toto = new WrongCat();
+	toto->makeSound();
+
+	delete toto;
 
 	return 0;
 }

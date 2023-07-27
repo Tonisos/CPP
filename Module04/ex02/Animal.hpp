@@ -12,14 +12,14 @@ class Animal
 {
 	public :
 		string	getType(void) const;
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		virtual ~Animal();
-
-	protected :
-		string	_type;
 		Animal();
 		Animal(string type);
 		Animal(Animal const& toCopy);
 		Animal &operator=(Animal const& toCopy);
+
+	protected :
+		string	_type;
 
 };
