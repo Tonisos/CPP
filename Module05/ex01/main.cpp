@@ -1,4 +1,5 @@
-#include "Bureaucrat.hpp"
+
+#include "Form.hpp"
 
 int	main()
 {
@@ -50,5 +51,7 @@ int	main()
 		std::cerr<< e.what() << endl;
 	}
 	cout << toni << endl;
+	Form bac;
+	cout << bac << endl;
 
 }

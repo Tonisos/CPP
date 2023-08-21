@@ -12,13 +12,13 @@ Brain::~Brain()
 
 Brain::Brain(Brain const& toCopy)
 {
+	cout << "Brain Copy constructor called" << endl;
 	*this = toCopy;
-	cout << "Brain copied" << endl;
 }
 
 Brain& Brain::operator=(Brain const& toCopy)
 {
-	cout << "Brain copied" << endl;
+	cout << "Brain Assignment operator called" << endl;
 	
 	if(this == &toCopy)
 		return (*this);

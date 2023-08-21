@@ -30,9 +30,7 @@ Cat& Cat::operator=(Cat const& toCopy)
 		return (*this);
 	_type = toCopy._type;
 
-	Braincat = new Brain(*toCopy.Braincat); 
-	if (Braincat == NULL)
-		cout << "a cat is born without a brain" << endl; 
+	*Braincat = *toCopy.Braincat; 
 	return (*this);
 }
 

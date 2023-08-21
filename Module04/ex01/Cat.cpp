@@ -4,35 +4,34 @@
 Cat::Cat():Animal("Cat")
 {
 	cout << "Cat created" << endl;
-	Braincat = new Brain;
+	Braincat = new Brain();
 	if (Braincat == NULL)
 		cout << "a cat is born without a brain" << endl;
 }
 
 Cat::~Cat()
 {
-	delete Braincat;
 	cout << "cat destroyed" << endl;
+	delete Braincat;
 }
 
 Cat::Cat(Cat const& toCopy)
 {
+	cout << "Cat Copy constructor called" << endl;
 	Braincat = new Brain(*toCopy.Braincat); 
 	if (Braincat == NULL)
 		cout << "a cat is born without a brain" << endl; 
-	cout << "Cat copied" << endl;
 	*this = toCopy;
 }
 
 Cat& Cat::operator=(Cat const& toCopy)
 {
+	cout << "Cat Assignment operator called" << endl;
 	if (this == &toCopy)
 		return (*this);
 	_type = toCopy._type;
 
-	Braincat = new Brain(*toCopy.Braincat); 
-	if (Braincat == NULL)
-		cout << "a cat is born without a brain" << endl; 
+	*Braincat = *toCopy.Braincat; 
 	return (*this);
 }
 

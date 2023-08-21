@@ -33,7 +33,14 @@ int main()
 	std::cout <<std::endl;
 
 	WrongAnimal *toto = new WrongCat();
+	WrongCat toni;
+
+	std::cout <<std::endl;
+
 	toto->makeSound();
+	toni.makeSound();
+
+	std::cout <<std::endl;
 
 	delete toto;
 

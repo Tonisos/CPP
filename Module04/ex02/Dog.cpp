@@ -31,9 +31,8 @@ Dog& Dog::operator=(Dog const& toCopy)
 		return (*this);
 	_type = toCopy._type;
 
-	BrainDog = new Brain(*toCopy.BrainDog); 
-	if (BrainDog == NULL)
-		cout << "a Dog is born without a brain" << endl; 
+	*BrainDog = *toCopy.BrainDog;
+	
 	return (*this);
 }
 
