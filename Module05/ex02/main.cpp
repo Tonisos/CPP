@@ -1,5 +1,5 @@
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int	main()
 {
@@ -51,22 +51,15 @@ int	main()
 		std::cerr<< e.what() << endl;
 	}
 	cout << toni << endl;
-	Form bac;
-	cout << bac << endl;
+
+	
 
 	cout << endl;
 
-	Form bic("toto", 100, 150);
+	
 
 	Bureaucrat tonio("tonio", 1);
-	try 
-	{
-		tonio.signForm(bic);
-	}
-	catch (exception &e)
-	{
-		std::cerr<< e.what() << endl;
-	}
+	
 	
 	
 }

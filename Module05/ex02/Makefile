@@ -10,7 +10,7 @@ NC = \033[0m
 # Headers
 HEADER_DIR = ./
 HEADER_NAMES = Bureaucrat.hpp \
-				Form.hpp \
+				AForm.hpp \
 
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
@@ -25,7 +25,7 @@ MAKE_FLAGS = --no-print-directory
 # SRCS Files and objs
 SRCS = main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
 		
 
 OBJS = $(SRCS:.cpp=.o)

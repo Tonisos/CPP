@@ -22,7 +22,7 @@ class Form{
 	public :
 		Form();
 		Form(string name, int signGrade, int executeGrade);
-		~Form();
+		virtual ~Form() = 0;
 		Form(Form const& toCopy);
 		Form &operator=(Form const& toCopy);
 

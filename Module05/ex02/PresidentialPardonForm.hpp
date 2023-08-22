@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class PresidentialPardonForm : public Form
 {
