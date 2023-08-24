@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & toCopy ) : Form(toCopy.getName(), toCopy.getGradeToSign(), toCopy.getGradeToExecute())
+RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & toCopy ) : AForm(toCopy.getName(), toCopy.getGradeToSign(), toCopy.getGradeToExecute())
 {
 	*this = toCopy;
 }
@@ -16,7 +16,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=( RobotomyRequestForm const &
 {
 	if (this != &toAssign)
 	{
-		Form::operator=(toAssign);
+		AForm::operator=(toAssign);
 		_target = toAssign._target;
 	}
 	return (*this);

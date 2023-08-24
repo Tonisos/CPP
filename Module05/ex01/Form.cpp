@@ -59,7 +59,7 @@ int Form::getExecuteGrade()
 ostream& operator<<(ostream &flux, Form & _Form)
 {
 	flux << "name : "<< _Form.getName() << " is : " 
-	<< _Form.getSigned() << " and the grade required to sign it is : " << _Form.getSignGrade()
+	<< boolToString(_Form.getSigned()) << " and the grade required to sign it is : " << _Form.getSignGrade()
 	<<" and the  grade required to execute it is : " << _Form.getExecuteGrade() << endl;
 	return flux;
 }
@@ -73,4 +73,12 @@ void Form::beSigned(Bureaucrat &bureau)
 	}
 	else
 		throw GradeTooLowException();
+}
+
+string boolToString(bool status)
+{
+	if (status)
+		return ("signed");
+	return ("not signed");
+
 }

@@ -1,13 +1,13 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm( string const target ) : Form("ShrubberyCreationForm", 145 , 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm( string const target ) : AForm("ShrubberyCreationForm", 145 , 137), _target(target)
 {
 
 }
 
 
-ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & toCopy ) : Form(toCopy.getName(), toCopy.getGradeToSign(), toCopy.getGradeToExecute())
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & toCopy ) : AForm(toCopy.getName(), toCopy.get(), toCopy.getGradeToExecute())
 {
 	*this = toCopy;
 }
@@ -23,8 +23,50 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 {
 	if (this != &toAssign)
 	{
-		Form::operator=(toAssign);
+		AForm::operator=(toAssign);
 		_target = toAssign._target;
 	}
 	return (*this);
+}
+
+
+void	ShrubberyCreationForm::execute( Bureaucrat const & executor ) 
+{
+	std::string file = _target + ".txt";
+	std::ofstream outfile(file);
+	if (!outfile.is_open()) 
+    	std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
+
+
+  outfile << "                                                         .
+                                              .         ;  
+                 .              .              ;%     ;;   
+                   ,           ,                :;%  %;   
+                    :         ;                   :;%;'     .,   
+           ,.        %;     %;            ;        %;'    ,;
+             ;       ;%;  %%;        ,     %;    ;%;    ,%'
+              %;       %;%;      ,  ;       %;  ;%;   ,%;' 
+               ;%;      %;        ;%;        % ;%;  ,%;'
+                `%;.     ;%;     %;'         `;%%;.%;'
+                 `:;%.    ;%%. %@;        %; ;@%;%'
+                    `:%;.  :;bd%;          %;@%;'
+                      `@%:.  :;%.         ;@@%;'   
+                        `@%.  `;@%.      ;@@%;         
+                          `@%%. `@%%    ;@@%;        
+                            ;@%. :@%%  %@@%;       
+                              %@bd%%%bd%%:;     
+                                #@%%%%%:;;
+                                %@@%%%::;
+                                %@@@%(o);  . '         
+                                %@@@o%;:(.,'         
+                            `.. %@@@o%::;         
+                               `)@@@o%::;         
+                                %@@(o)::;        
+                               .%@@@@%::;         
+                               ;%@@@@%::;.          
+                              ;%@@@@%%:;;;. 
+                          ...;%@@@@@%%:;;;;,..";
+
+  
+  outfile.close();
 }

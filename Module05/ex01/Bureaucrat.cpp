@@ -1,16 +1,6 @@
 #include "Bureaucrat.hpp"
 
 
-const char* GradeTooHighException::what(void) const throw()
-{
-	return ("Grade is too hight");
-}
-
-const char* GradeTooLowException::what(void) const throw()
-{
-	return ("Grade is too low");
-}
-
 Bureaucrat::Bureaucrat(string const name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)

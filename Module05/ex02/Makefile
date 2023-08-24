@@ -11,6 +11,9 @@ NC = \033[0m
 HEADER_DIR = ./
 HEADER_NAMES = Bureaucrat.hpp \
 				AForm.hpp \
+				PresidentialPardonForm.hpp \
+				RobotomyRequestForm.hpp \
+				ShrubberyCreationForm.hpp
 
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
@@ -26,6 +29,9 @@ MAKE_FLAGS = --no-print-directory
 SRCS = main.cpp \
 		Bureaucrat.cpp \
 		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp
 		
 
 OBJS = $(SRCS:.cpp=.o)

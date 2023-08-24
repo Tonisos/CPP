@@ -10,7 +10,7 @@ using std::ostream;
 class Bureaucrat;
 
 
-class Form{
+class AForm{
 
 	private :
 		string 			_name;
@@ -20,11 +20,11 @@ class Form{
 
 
 	public :
-		Form();
-		Form(string name, int signGrade, int executeGrade);
-		virtual ~Form() = 0;
-		Form(Form const& toCopy);
-		Form &operator=(Form const& toCopy);
+		AForm();
+		AForm(string name, int signGrade, int executeGrade);
+		~AForm();
+		AForm(AForm const& toCopy);
+		AForm &operator=(AForm const& toCopy);
 
 		string getName();
 		bool getSigned();
@@ -34,14 +34,27 @@ class Form{
 		void	beSigned(Bureaucrat &bureau);
 
 
+		class GradeTooLowException: public std::exception
+		{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade too low");
+			}
+		};
+
+		class GradeTooHighException: public std::exception
+		{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade too high");
+			}
+		};
+
 };
-// class GradeTooHighException : public exception{
-// 				const char* what() const throw();
-// };
-
-// class GradeTooLowException : public exception{
-// 				const char* what() const throw();
-// };
 
 
-ostream& operator<<(ostream &flux, Form & _Form);
+
+ostream& operator<<(ostream &flux, AForm & _AForm);
+
+
+string boolToString(bool status);

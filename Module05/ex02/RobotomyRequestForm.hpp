@@ -6,11 +6,11 @@ class RobotomyRequestForm: public Bureaucrat
 {
 	public:
 
-		PresidentialPardonForm( string const target );
-		PresidentialPardonForm( PresidentialPardonForm const & toCopy );
-		~PresidentialPardonForm( void );
+		RobotomyRequestForm( string const target );
+		RobotomyRequestForm( RobotomyRequestForm const & toCopy );
+		~RobotomyRequestForm( void );
 
-		PresidentialPardonForm&	operator=( PresidentialPardonForm const & toAssign );
+		RobotomyRequestForm&	operator=( RobotomyRequestForm const & toAssign );
 
 		void	execute( Bureaucrat const & executor ) const ;
 

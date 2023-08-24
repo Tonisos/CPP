@@ -30,7 +30,19 @@ class Bureaucrat{
 		Bureaucrat &operator=(Bureaucrat const& toCopy);
 
 
+		class GradeTooHighException : public exception{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade is too hight");
+			}
+		};
 
+		class GradeTooLowException : public exception{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade is too low");
+			}
+		};
 
 		string	getName();
 		int		getGrade();
@@ -41,12 +53,6 @@ class Bureaucrat{
 		void	signForm(Form &form);
 };
 
-class GradeTooHighException : public exception{
-				const char* what() const throw();
-};
 
-class GradeTooLowException : public exception{
-				const char* what() const throw();
-};
 
 ostream& operator<<(ostream &flux , Bureaucrat & _bureaucrat);

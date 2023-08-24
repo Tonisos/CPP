@@ -34,6 +34,22 @@ class Form{
 		void	beSigned(Bureaucrat &bureau);
 
 
+		class GradeTooLowException: public std::exception
+		{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade too low");
+			}
+		};
+
+		class GradeTooHighException: public std::exception
+		{
+			virtual const char* what( void ) const throw()
+			{
+				return ("Grade too high");
+			}
+		};
+
 };
 // class GradeTooHighException : public exception{
 // 				const char* what() const throw();
@@ -45,3 +61,6 @@ class Form{
 
 
 ostream& operator<<(ostream &flux, Form & _Form);
+
+
+string boolToString(bool status);
