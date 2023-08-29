@@ -27,7 +27,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=( RobotomyRequestForm const &
 	return (*this);
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) 
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())
 		throw(FormNotSigned());

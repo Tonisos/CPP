@@ -23,7 +23,7 @@ class AForm{
 	public :
 		AForm();
 		AForm(string name, int signGrade, int executeGrade);
-		~AForm();
+		virtual ~AForm();
 		AForm(AForm const& toCopy);
 		AForm &operator=(AForm const& toCopy);
 
@@ -33,6 +33,7 @@ class AForm{
 		int getExecuteGrade() const;
 
 		void	beSigned(Bureaucrat &bureau);
+		virtual void	execute( Bureaucrat const & executor ) const = 0;
 
 
 		class GradeTooLowException: public std::exception

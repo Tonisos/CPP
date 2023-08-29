@@ -30,7 +30,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 }
 
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) 
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (!getSigned())
 		throw(FormNotSigned());

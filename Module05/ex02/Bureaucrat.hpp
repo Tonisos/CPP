@@ -51,6 +51,9 @@ class Bureaucrat{
 
 
 		void	signForm(AForm &form);
+
+		void	executeForm(AForm const & form) const;
+
 };
 
 ostream& operator<<(ostream &flux , Bureaucrat & _bureaucrat);

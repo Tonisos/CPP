@@ -13,7 +13,8 @@ HEADER_NAMES = Bureaucrat.hpp \
 				AForm.hpp \
 				PresidentialPardonForm.hpp \
 				RobotomyRequestForm.hpp \
-				ShrubberyCreationForm.hpp
+				ShrubberyCreationForm.hpp \
+				Intern.hpp 
 
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
@@ -31,7 +32,8 @@ SRCS = main.cpp \
 		AForm.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp \
+		Intern.cpp
 		
 
 OBJS = $(SRCS:.cpp=.o)

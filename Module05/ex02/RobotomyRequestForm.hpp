@@ -12,7 +12,7 @@ class RobotomyRequestForm: public AForm
 
 		RobotomyRequestForm&	operator=( RobotomyRequestForm const & toAssign );
 
-		void	execute(Bureaucrat const & executor) ;
+		void	execute(Bureaucrat const & executor) const;
 
 	private:
 
