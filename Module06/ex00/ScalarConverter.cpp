@@ -107,7 +107,8 @@ void	ScalarConverter::convert(const string toConvert)
 			std::cout << "char: impossible" << std::endl;
 
 			float	num = strtof(toConvert.c_str(), NULL);
-		
+			cout << num << endl;
+
 			if ((int)num > INT_MIN && (int)num < INT_MAX)
 				std::cout << "int: " <<(int)num << std::endl;
 			else

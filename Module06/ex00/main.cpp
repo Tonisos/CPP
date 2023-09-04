@@ -10,7 +10,9 @@ int main(int argc, char** argv)
 
 	string type(argv[1]);
 	ScalarConverter Convertisor;
-	
+	std::cout << INT_MAX << std::endl;
+	std::cout << INT_MIN << std::endl;
+
 	Convertisor.convert(type);
 	return (0);
 }
