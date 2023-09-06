@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 	ScalarConverter Convertisor;
 	std::cout << INT_MAX << std::endl;
 	std::cout << INT_MIN << std::endl;
+	std::cout << DBL_MAX << std::endl;
 
 	Convertisor.convert(type);
 	return (0);

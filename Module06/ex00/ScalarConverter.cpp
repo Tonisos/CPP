@@ -110,14 +110,14 @@ void	ScalarConverter::convert(const string toConvert)
 			cout << num << endl;
 
 			if (num >= INT_MIN && num <= INT_MAX)
-				std::cout << "int: " <<(int)num << std::endl;
+				std::cout << "int: " <<static_cast<int>(num) << std::endl;
 			else
 				std::cout << "int: impossible" << std::endl;
 			
-			std::cout << "float: " << num << "f" << std::endl;
+			std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
 
-			if ((double)num > DBL_MIN && (double)num < DBL_MAX)
-				std::cout << "double : " << num << std::endl;
+			if (static_cast<double>(num) > DBL_MIN && static_cast<double>(num) < DBL_MAX)
+				std::cout << "double : " << static_cast<double>(num) << std::endl;
 			else
 				std::cout << "double : impossible" << std::endl;
 }
