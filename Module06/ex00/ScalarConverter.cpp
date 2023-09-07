@@ -89,6 +89,14 @@ void	ScalarConverter::convert(const string toConvert)
 		std::cout << "double: -inf" << std::endl;
 		return ;
 	}
+	else if (toConvert.size() == 1 && std::isdigit(static_cast<int>(toConvert[0])))
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: " << static_cast<int>(toConvert[0]) << std::endl;
+		std::cout << "float: " << static_cast<float>(toConvert[0]) << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(toConvert[0]) << std::endl;
+		return;
+	}
 	else if (toConvert.size() == 1 && std::isprint(static_cast<char>(toConvert[0])))
 	{
 		std::cout << "char: " << toConvert << std::endl;
