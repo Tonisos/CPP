@@ -23,21 +23,33 @@ void	identify( Base* p )
 
 void	identify( Base& p )
 {
-  bool is_a = dynamic_cast<A&>(p) != std::nullptr_t{};
-  bool is_b = dynamic_cast<B&>(p) != std::nullptr_t{};
-  bool is_c = dynamic_cast<C&>(p) != std::nullptr_t{};
+	Base	test;
 
-  if (is_a) {
-    std::cout << "A" << std::endl;
-  } else if (is_b) {
-    std::cout << "B" << std::endl;
-  } else if (is_c) {
-    std::cout << "C" << std::endl;
-  }
+	try
+	{
+		test = dynamic_cast<A&>(p);
+		std::cout << "A" << std::endl;
+	}
+	catch (...) { }
+	try
+	{
+		test = dynamic_cast<B&>(p);
+		std::cout << "B" << std::endl;
+	}
+	catch (...) { }
+	try
+	{
+		test = dynamic_cast<C&>(p);
+		std::cout << "C" << std::endl;
+	}
+	catch (...) { }
 }
 
 
 int main()
 {
 	srand(time(NULL));
+	Base *test = generate();
+	identify(test);
+	delete test;
 }
