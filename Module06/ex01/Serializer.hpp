@@ -16,15 +16,15 @@ struct Data {
 class Serializer{
 
 	public :
+
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+
+	private :
 		Serializer();
 		~Serializer();
 		Serializer(Serializer const &toCopy);
 		Serializer &operator=(Serializer const &toCopy);
-
-		uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
-
-	private :
 
 
 };

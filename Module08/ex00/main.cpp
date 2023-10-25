@@ -9,11 +9,13 @@ int main()
 	my_vector.push_back(4);
 	try
     {
-        easyfind(my_vector, 3);
+        easyfind(my_vector, 4);
     }
     catch (std::exception &e)
     {
        std::cout << e.what() << std::endl;
         exit(1);
     }
+	std::cout << "number found" << std::endl;
+	return 0;
 }

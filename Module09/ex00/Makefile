@@ -1,4 +1,4 @@
-NAME = Span
+NAME =  Btc
 
 # Colors
 GREEN = \033[1;32m
@@ -9,7 +9,7 @@ NC = \033[0m
 
 # Headers
 HEADER_DIR = ./
-HEADER_NAMES = Span.hpp
+HEADER_NAMES =  BitcoinExchange.hpp
 
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
@@ -23,7 +23,7 @@ MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
 SRCS = main.cpp \
-		Span.cpp
+		 BitcoinExchange.cpp
 		
 		
 

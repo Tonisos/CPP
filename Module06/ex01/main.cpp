@@ -6,11 +6,11 @@ int main()
 	toto.i = 7;
 	toto.c = 'c';
 	
-	Serializer captain;
-	uintptr_t j = captain.serialize(&toto);
+	
+	uintptr_t j = Serializer::serialize(&toto);
 	cout << "j = " << j << endl;
 
-	struct Data *tata = captain.deserialize(j);
+	struct Data *tata = Serializer::deserialize(j);
 	cout << tata->i << endl;
 	cout << tata->c << endl;
 }

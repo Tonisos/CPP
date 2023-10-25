@@ -18,6 +18,7 @@ template <typename T>
 typename T::iterator easyfind(T cont, int toFind)
 {
 	typename T::iterator i = std::find(cont.begin(), cont.end(), toFind);
-	if (i)
+	if (i == cont.end())
+		throw(myException());
 	return (i);
 };

@@ -3,6 +3,9 @@
 #include <iostream>
 #include <limits.h>
 #include <stdlib.h>
+#include <climits>
+#include <cfloat>
+#include <cmath>
 
 #define INT_MAX   __INT_MAX__
 

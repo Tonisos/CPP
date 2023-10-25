@@ -1,4 +1,4 @@
-NAME = watever
+NAME = MutanStack
 
 # Colors
 GREEN = \033[1;32m
@@ -9,7 +9,7 @@ NC = \033[0m
 
 # Headers
 HEADER_DIR = ./
-HEADER_NAMES = whatever.hpp
+HEADER_NAMES = MutanStack.hpp
 
 				
 HEADERS = $(addprefix $(HEADER_DIR), $(HEADER_NAMES))
@@ -23,6 +23,7 @@ MAKE_FLAGS = --no-print-directory
 
 # SRCS Files and objs
 SRCS = main.cpp \
+		
 		
 		
 
