@@ -3,7 +3,7 @@
 bool checkdate(string date)
 {
 	if (date.size() != 10 || date[4] != '-' || date[7]!= '-')
-		false;
+		return (std::cout << "Error: not a valid date => " << date << std::endl, false);
 
 	string syear;
 	string smonth;
@@ -33,4 +33,44 @@ bool checkvalue(string value)
 	if (dvalue <= 0 || dvalue >= 1000)	
 		return false;
 	return true;
+}
+
+bool checkline(string line)
+{
+	
+	string date;
+	string value;
+	if (line.size() < 12 ||	line[10] != '|' || line[9] != ' ' || line [11] != ' ')
+			return false ;
+		
+		size_t pos = line.find('|');
+		date = line.substr(0, pos);
+    	value = line.substr(pos + 1);
+		if (!checkdate(date) || !checkvalue(value))
+			return false ;
+		
+	return true;
+}
+
+void usefile(std::ifstream& file)
+{
+	string line;
+	string date;
+	string value;
+
+	std::getline(file, line);
+
+	while(std::getline(file, line))
+	{
+		if (!checkline(line))
+			cout << "invalid lign" << endl;
+		else 
+		{
+			size_t pos = line.find('|');
+			date = line.substr(0, pos);
+			value = line.substr(pos + 1);
+		}
+		
+
+	}
 }

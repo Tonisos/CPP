@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
 #include <iostream>
 #include <string>
@@ -10,3 +11,8 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::map;
+
+
+
+
+#endif

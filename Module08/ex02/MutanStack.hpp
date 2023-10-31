@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MUTANSTACK_HPP
+#define MUTANSTACK_HPP
 
 
 #include <iostream>
@@ -17,3 +18,5 @@ public:
         return this->c.end();
     }
 };
+
+#endif

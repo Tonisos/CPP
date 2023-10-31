@@ -1,4 +1,5 @@
-#pragma once
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 #include <iostream>
 
 
@@ -25,3 +26,5 @@ const T & min( const T & A, const T & B )
 { 
     return A < B ? A : B; 
 }
+
+#endif

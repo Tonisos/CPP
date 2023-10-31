@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 # include <iostream>
 # include <vector>
 # include <exception>
@@ -48,3 +50,5 @@ class Span {
 
 
 };
+
+#endif

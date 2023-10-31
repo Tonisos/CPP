@@ -6,7 +6,7 @@ int main(int argc, char** argv)
 		return 1;
 	
 
-	//mapping 
+	//mapping data.csv
 
 	map<string, double> database;
 
@@ -38,6 +38,8 @@ int main(int argc, char** argv)
         std::cerr << "Error: Could not open the file." << std::endl;
         return 1;
     }
+	
+	
 	
 
 

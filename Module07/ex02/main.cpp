@@ -8,6 +8,10 @@ int main ()
 	Array<int> array2(5);
 	cout << array2.size() << endl;
 
+	Array<int> array3(6);
+
+	array3 = array2;
+
 	array1 = array2;
 	cout << array1.size() << endl;
 	try{
@@ -28,4 +32,5 @@ int main ()
 		catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
+	 
   }

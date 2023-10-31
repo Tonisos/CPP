@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -38,6 +40,8 @@ class Array {
 	
 		Array &operator=(const Array &toCopy)
         {
+			if (array)
+				delete [](array);
             len = toCopy.len;
             array = new T[toCopy.len];
             for (size_t i = 0; i < len; i++)
@@ -63,3 +67,5 @@ class Array {
 		}
 
 ;
+
+#endif
