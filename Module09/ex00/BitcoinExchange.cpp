@@ -83,34 +83,45 @@ void printexchange(string date, string value, map<string, double> database)
 			cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
 			return;
 		}
-		if (getyear(it->first) == year &&  getmonth(it->first) == month && getday(it->first) >= day)
+		if (getyear(it->first) == year &&  getmonth(it->first) == month && getday(it->first) > day)
 		{
+					
 			counter--;
 			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
 			{
 				counter --;
 				if (counter == 0)
+				{
 					cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
+					return;
+				}
 			}
 		}
-		if (getyear(it->first) == year &&  getmonth(it->first) >= month )
+		if (getyear(it->first) == year &&  getmonth(it->first) > month )
 		{
+			
 			counter--;
 			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
 			{
 				counter --;
 				if (counter == 0)
+				{
 					cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
+					return;
+				}
 			}
 		}
-		if (getyear(it->first) >= year)
+		if (getyear(it->first) > year)
 		{
 			counter--;
 			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
 			{
 				counter --;
 				if (counter == 0)
+				{
 					cout << dvalue * it->second <<endl;
+					return;
+				}
 			}
 		}
 
