@@ -72,17 +72,48 @@ void printexchange(string date, string value, map<string, double> database)
 	int	day;
 	double dvalue;
 
-	cout << "toto" << endl;
 	std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day);
 	std::sscanf(value.c_str(), "%lf", &dvalue);
-
+	int counter = 0;
 	 for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it) 
 	 {
+		counter++;
         if (getyear(it->first) == year && getmonth(it->first) == month && getday(it->first) == day)
 		{
-			cout << dvalue * it->second <<endl;
+			cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
 			return;
 		}
+		if (getyear(it->first) == year &&  getmonth(it->first) == month && getday(it->first) >= day)
+		{
+			counter--;
+			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
+			{
+				counter --;
+				if (counter == 0)
+					cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
+			}
+		}
+		if (getyear(it->first) == year &&  getmonth(it->first) >= month )
+		{
+			counter--;
+			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
+			{
+				counter --;
+				if (counter == 0)
+					cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
+			}
+		}
+		if (getyear(it->first) >= year)
+		{
+			counter--;
+			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
+			{
+				counter --;
+				if (counter == 0)
+					cout << dvalue * it->second <<endl;
+			}
+		}
+
 	 }
 
 }
