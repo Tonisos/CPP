@@ -16,6 +16,8 @@ bool checkdate(string date)
 	int year;
 	int month;
 	int	day;
+
+	if (year == 2016 || year || 2020)
 	
 	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) 
         return (std::cout << "Error: not a valid date => " << date << std::endl, false);
