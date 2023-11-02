@@ -4,15 +4,16 @@ int main(int argc, char** argv)
 {
 	if (argc != 2)
 		return 1;
-	
-
+	(void) argv;
+		
 	//mapping data.csv
 
 	map<string, double> database;
 
 	std::ifstream datafile("data.csv");
 
-    if (!datafile.is_open()) {
+    if (!datafile.is_open()) 
+	{
         std::cerr << "Error: Could not open the file." << std::endl;
         return 1;
     }
@@ -30,6 +31,9 @@ int main(int argc, char** argv)
 	}
 	datafile.close();
 
+	// for (map<string, double>::iterator t = database.begin(); t != database.end(); ++t)
+	// 	cout << t->first << " | " << t->second << endl;  
+
 	// answer
 
 	std::ifstream file(argv[1]);
@@ -38,6 +42,7 @@ int main(int argc, char** argv)
         std::cerr << "Error: Could not open the file." << std::endl;
         return 1;
     }
+	usefile(file, database);
 	
 	
 	

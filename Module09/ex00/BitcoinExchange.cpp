@@ -2,7 +2,7 @@
 
 bool checkdate(string date)
 {
-	if (date.size() != 10 || date[4] != '-' || date[7]!= '-')
+	if (date.size() != 11 || date[4] != '-' || date[7]!= '-')
 		return (std::cout << "Error: not a valid date => " << date << std::endl, false);
 
 	string syear;
@@ -18,17 +18,17 @@ bool checkdate(string date)
 	int	day;
 	
 	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) 
-        return false;
+        return (std::cout << "Error: not a valid date => " << date << std::endl, false);
 	
 	if (year > 2023 || year < 1900 || month < 1 || month > 12 || day < 1 || day > 31)
-		return false;
+		return (std::cout << "Error: not a valid date => " << date << std::endl, false);
 	return true;
 }
 
 bool checkvalue(string value)
 {
 	double dvalue;
-	if (std::sscanf(value.c_str(), "%d", &dvalue) != 1)
+	if (std::sscanf(value.c_str(), "%lf", &dvalue) != 1)
 		return false;
 	if (dvalue <= 0 || dvalue >= 1000)	
 		return false;
@@ -40,7 +40,7 @@ bool checkline(string line)
 	
 	string date;
 	string value;
-	if (line.size() < 12 ||	line[10] != '|' || line[9] != ' ' || line [11] != ' ')
+	if (line.size() < 12 ||	line[11] != '|' || line[10] != ' ' || line [12] != ' ')
 			return false ;
 		
 		size_t pos = line.find('|');
@@ -48,15 +48,51 @@ bool checkline(string line)
     	value = line.substr(pos + 1);
 		if (!checkdate(date) || !checkvalue(value))
 			return false ;
-		
 	return true;
 }
 
-void usefile(std::ifstream& file)
+int	getyear(string date)
+{
+	return (atoi(date.substr(0, 4).c_str()));
+}
+
+int getmonth(string date)
+{
+	return (atoi(date.substr(5, 2).c_str()));
+}
+int getday(string date)
+{
+	return (atoi(date.substr(8, 2).c_str()));
+}
+
+void printexchange(string date, string value, map<string, double> database)
+{
+	int year;
+	int month;
+	int	day;
+	double dvalue;
+
+	cout << "toto" << endl;
+	std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day);
+	std::sscanf(value.c_str(), "%lf", &dvalue);
+
+	 for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it) 
+	 {
+        if (getyear(it->first) == year && getmonth(it->first) == month && getday(it->first) == day)
+		{
+			cout << dvalue * it->second <<endl;
+			return;
+		}
+	 }
+
+}
+
+void usefile(std::ifstream& file, map<string, double> database)
 {
 	string line;
 	string date;
 	string value;
+	(void) database;
 
 	std::getline(file, line);
 
@@ -69,6 +105,7 @@ void usefile(std::ifstream& file)
 			size_t pos = line.find('|');
 			date = line.substr(0, pos);
 			value = line.substr(pos + 1);
+			printexchange(date, value, database);
 		}
 		
 

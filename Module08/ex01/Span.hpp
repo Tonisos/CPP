@@ -27,7 +27,6 @@ class Span {
 			unsigned int _N;
 			vector <int> _numbers;
 
-
 		public :
 			Span(int N);
 			~Span();
@@ -37,7 +36,6 @@ class Span {
 
 			void addNumber(int n);
 			
-
 			template <typename InputIterator>
 			void	addNumbers(InputIterator first, InputIterator last) {
 				while (first <= last)
@@ -46,9 +44,6 @@ class Span {
 					++first;
 				}
 	}
-
-
-
 };
 
 #endif
