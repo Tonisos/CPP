@@ -17,13 +17,37 @@ bool checkdate(string date)
 	int month;
 	int	day;
 
-	if (year == 2016 || year || 2020)
-	
+	//quelle jour somme nous
+
+	time_t now = time(0);
+	tm *localTime = localtime(&now);
+
+	int tyear = localTime->tm_year + 1900;
+	int tmonth = localTime->tm_mon + 1;
+	int tday = localTime->tm_mday;
+
+
+	//
+
 	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) 
         return (std::cout << "Error: not a valid date => " << date << std::endl, false);
 	
-	if (year > 2023 || year < 1900 || month < 1 || month > 12 || day < 1 || day > 31)
+	if (tyear < year || (tyear == year && tmonth < month) || (tyear == year && tmonth == month && tday < day))
+        return (std::cout << "Cannot see in the future => " << date << std::endl, false);
+	
+
+
+	if ((month == 2 || month == 4 || month == 6 || month == 9 || month == 11) && day == 31) 
+		return (std::cout << "only 30 days in this month  => "<< date << std::endl, false);
+
+	if ((year != 2016 && year != 2020) && (month == 2 && day == 29))
+		return (std::cout << "not a bisextile year => " << date << std::endl, false);
+	if (month < 1 || month > 12 || day < 1 || day > 31)
 		return (std::cout << "Error: not a valid date => " << date << std::endl, false);
+	
+	if (year < 2009 || (year == 2009 && month == 1 && day == 1))
+		return (std::cout << "date must be after 2009-01-01 => " << date << std::endl, false);
+	
 	return true;
 }
 
@@ -31,9 +55,9 @@ bool checkvalue(string value)
 {
 	double dvalue;
 	if (std::sscanf(value.c_str(), "%lf", &dvalue) != 1)
-		return false;
+		return (std::cout << "invalid value"<< std::endl, false);
 	if (dvalue <= 0 || dvalue >= 1000)	
-		return false;
+		return (std::cout << "value must be between 0 and 1000 "<< std::endl, false);
 	return true;
 }
 
@@ -43,13 +67,16 @@ bool checkline(string line)
 	string date;
 	string value;
 	if (line.size() < 12 ||	line[11] != '|' || line[10] != ' ' || line [12] != ' ')
-			return false ;
+	{
+		return (std::cout << "format : YYYY-MM-DD | value"<< std::endl, false);
+	}
+
 		
-		size_t pos = line.find('|');
-		date = line.substr(0, pos);
-    	value = line.substr(pos + 1);
-		if (!checkdate(date) || !checkvalue(value))
-			return false ;
+	size_t pos = line.find('|');
+	date = line.substr(0, pos);
+    value = line.substr(pos + 1);
+	if (!checkdate(date) || !checkvalue(value))
+		return false;
 	return true;
 }
 
@@ -85,7 +112,7 @@ void printexchange(string date, string value, map<string, double> database)
 			cout << date << " => "<< value << " = "<< dvalue * it->second <<endl;
 			return;
 		}
-		if (getyear(it->first) == year &&  getmonth(it->first) == month && getday(it->first) > day)
+		else if (getyear(it->first) == year &&  getmonth(it->first) == month && getday(it->first) > day)
 		{
 					
 			counter--;
@@ -99,7 +126,7 @@ void printexchange(string date, string value, map<string, double> database)
 				}
 			}
 		}
-		if (getyear(it->first) == year &&  getmonth(it->first) > month )
+		else if (getyear(it->first) == year &&  getmonth(it->first) > month )
 		{
 			
 			counter--;
@@ -113,7 +140,7 @@ void printexchange(string date, string value, map<string, double> database)
 				}
 			}
 		}
-		if (getyear(it->first) > year)
+		else if (getyear(it->first) > year)
 		{
 			counter--;
 			for (std::map<std::string, double>::iterator it = database.begin(); it != database.end(); ++it)
@@ -126,6 +153,14 @@ void printexchange(string date, string value, map<string, double> database)
 				}
 			}
 		}
+		else 
+		{
+			std::map<string, double>::iterator last = database.end();
+			--last;
+			cout << date << " => "<< value << " = "<< dvalue * last->second <<endl;
+			return;
+		}
+
 
 	 }
 
@@ -143,7 +178,10 @@ void usefile(std::ifstream& file, map<string, double> database)
 	while(std::getline(file, line))
 	{
 		if (!checkline(line))
-			cout << "invalid lign" << endl;
+		{
+			// cout << "invalid lign" << endl;
+			// break;
+		}
 		else 
 		{
 			size_t pos = line.find('|');

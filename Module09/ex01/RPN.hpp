@@ -1,5 +1,5 @@
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #include <iostream>
 #include <string>
@@ -9,6 +9,8 @@
 #include <iterator>
 #include <algorithm>
 #include <ctime>
+#include <stack>
+
 
 
 
@@ -17,6 +19,6 @@ using std::endl;
 using std::string;
 using std::map;
 
-void usefile(std::ifstream& file, map<string, double> database);
+void execute(string expression);
 
 #endif
