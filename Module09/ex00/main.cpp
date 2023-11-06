@@ -19,6 +19,7 @@ int main(int argc, char** argv)
 
 	string line;
 	std::getline(datafile, line);
+
     while (std::getline(datafile, line)) 
 	{
 		int commaPlace = line.find(",");

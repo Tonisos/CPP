@@ -174,6 +174,11 @@ void usefile(std::ifstream& file, map<string, double> database)
 	(void) database;
 
 	std::getline(file, line);
+	if (line != "date | value")
+	{
+		cout << "the first line should be <date | value>"<< endl;
+		return ;
+	}
 
 	while(std::getline(file, line))
 	{
