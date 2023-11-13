@@ -1,4 +1,4 @@
-NAME =  Btc
+NAME =  btc
 
 # Colors
 GREEN = \033[1;32m
