@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <ctime>
 #include <stack>
+#include <queue>
 
 
 
@@ -18,6 +19,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::map;
+using std::queue;
 
 void execute(string expression);
 

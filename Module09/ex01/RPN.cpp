@@ -26,28 +26,34 @@ double doTheMath(double n1, double n2, char operand)
 
 void execute(string expression)
 {
-	std::stack<double> calcul;
+	std::queue<double> calcul;
 	for (int i = 0; expression[i]; i++)
 	{
 		if (isdigit(expression[i]))
+		{
 			calcul.push(double (expression[i] - '0'));
+		}
 		else if (isOperator(expression[i]))
 		{
-			if (calcul.size() != 2)
+			if (calcul.size() < 2)
 			{
 				cout << "invalid input" << endl;
-				return ;
+				break;
 			}
-			double n2 = calcul.top();
+			if (calcul.size() > 2)
+			{
+				
+			}
+			double n2 = calcul.front();
 			calcul.pop();
-			double n1 = calcul.top();
+			double n1 = calcul.front();
 			calcul.pop();
-			if (n2 == 0 && expression[i] == 0)
+			if (n2 == 0 && expression[i] == '/')
 			{
 				cout << "division by 0 is impossible";
 				return;
 			}
-			calcul.push(doTheMath(n1, n2, expression[i]));
+			calcul.push(doTheMath(n2, n1, expression[i]));
 		}
 		else if (expression[i] != ' ')
 		{
@@ -56,5 +62,5 @@ void execute(string expression)
 		}
 
 	}
-	cout << calcul.top() << endl;
+	cout << calcul.front() << endl;
 }
