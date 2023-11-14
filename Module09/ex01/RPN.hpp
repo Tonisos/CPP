@@ -11,6 +11,7 @@
 #include <ctime>
 #include <stack>
 #include <queue>
+#include <cstring>
 
 
 
