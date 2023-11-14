@@ -153,7 +153,7 @@ void printexchange(string date, string value, map<string, double> database)
 				}
 			}
 		}
-		else 
+		else if (year > 2022 || (year == 2022 && month > 03) || (year == 2022 && month == 03 && day > 29))
 		{
 			std::map<string, double>::iterator last = database.end();
 			--last;
